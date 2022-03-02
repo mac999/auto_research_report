@@ -5,7 +5,18 @@ Research report generation automatically
 과도한 행정에 지친 연구자들을 위해, 자동으로 연구노트를 생성하는 파이썬 프로그램. 
 다음과 같이 자주 사용하거나 글을 쓰는 웹사이트 블로그를 지정하면, 자동으로 크롤링해서 연구노트 워드파일을 생성함.
 
-<img src = "https://github.com/mac999/auto_research_report/blob/main/demo.PNG" width="50%"/>
+다음과 같이 실행하면 됨. 
+python gen_report.py 2022/1/4 "computer science" r3.docx 100 300 50
+
+<img src = "https://github.com/mac999/auto_research_report/blob/main/demo.PNG" width="70%"/>
+
+# function
+Command arguments
+python gen_report.py [date] ["Google query keyword" or URL] output.docx begin length step
+
+begin = begin position of content text
+length = copy character length
+step = skip character length
 
 # Install development environment in Windows
 1. Install Anaconda
@@ -23,7 +34,9 @@ pip install google</br>
 pip install python-docx</br>
 
 # example
-python gen_report.py 2022/1/2 https://sites.google.com/site/bimprinciple/in-the-news/gieob-uidijiteoljeonhwanguhyeon out.docx 2000 300 2000
+python gen_report.py 2022/1/2 https://sites.google.com/site/bimprinciple/in-the-news/gieob-uidijiteoljeonhwanguhyeon r1.docx 2000 300 2000
+python gen_report.py 2022/1/3 http://daddynkidsmakers.blogspot.com/2022/02/pdal-3.html r2.docx 1000 200 50
+python gen_report.py 2022/1/4 "computer science" r3.docx 100 300 50
 
 # reference
 https://www.scrapingbee.com/blog/crawling-python/
