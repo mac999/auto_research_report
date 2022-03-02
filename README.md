@@ -14,9 +14,9 @@ python gen_report.py 2022/1/4 "computer science" r3.docx 100 300 50
 Command arguments
 python gen_report.py [date] ["Google query keyword" or URL] output.docx begin length step
 
-begin = begin position of content text
-length = copy character length
-step = skip character length
+begin = begin position of content text</br>
+length = copy character length</br>
+step = skip character length</br>
 
 # Install development environment in Windows
 1. Install Anaconda
