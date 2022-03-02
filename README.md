@@ -1,4 +1,4 @@
-# auto_research_report
+# Auto Research Note
 Research report generation automatically
 
 # purpose
