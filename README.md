@@ -14,10 +14,10 @@ Research report generation automatically
 2. install pip
 
 # Install packages
-pip install beautifulsoup4
-pip install requests bs4
-pip install google
-pip install python-docx
+pip install beautifulsoup4</br>
+pip install requests bs4</br>
+pip install google</br>
+pip install python-docx</br>
 
 # example
 python gen_report.py 2022/1/2 https://sites.google.com/site/bimprinciple/in-the-news/gieob-uidijiteoljeonhwanguhyeon out.docx 2000 300 2000
