@@ -14,6 +14,7 @@ Research report generation automatically
 2. install pip
 
 # Install packages
+Open terminal and Input the below pip install commands</br></br>
 pip install beautifulsoup4</br>
 pip install requests bs4</br>
 pip install google</br>
