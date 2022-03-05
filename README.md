@@ -7,7 +7,7 @@ Research note generation automatically
 검색식이나 웹사이트 명령행에 입력하면 해당 컨텐츠 크롤링해 옵션에 맞게 연구 메모 텍스트 만들어 워드파일로 생성.
 다음과 같이 자주 사용하거나 글을 쓰는 웹사이트나 검색식을 지정하면, 자동으로 크롤링해서 연구노트 워드파일을 생성함. - 과도한 행정에 지친 연구자를 위해 
 
-A Python program that automatically creates research notes.
+The python program that automatically creates research notes.
 If you enter it in a search expression or website command line, the content is crawled, and research memo text is created according to the options and created as a word file. If you specify a website or search formula that you use or write frequently as follows, it automatically crawls and creates a research note word file. - For researchers who are tired of excessive administration
 
 Just run it like below.<br>
