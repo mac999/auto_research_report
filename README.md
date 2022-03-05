@@ -16,9 +16,9 @@ python gen_report.py 2022/1/4 "computer science" r3.docx 100 300 50
 1. Command arguments
 python gen_report.py [date] ["Google query keyword" or URL] output.docx begin length step
 
-begin = begin position of content text</br>
-length = copy character length</br>
-step = skip character length</br>
+begin = begin position of html body content text</br>
+length = copy text length</br>
+step = skip text length</br>
 
 2. config.csv includes document header, title like below. <br>
 
