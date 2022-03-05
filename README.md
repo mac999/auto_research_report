@@ -7,7 +7,7 @@ Research report generation automatically
 검색식이나 웹사이트 명령행에 입력하면 해당 컨텐츠 크롤링해 옵션에 맞게 연구 메모 텍스트 만들어 워드파일로 생성.
 다음과 같이 자주 사용하거나 글을 쓰는 웹사이트나 검색식을 지정하면, 자동으로 크롤링해서 연구노트 워드파일을 생성함. - 과도한 행정에 지친 연구자를 위해 
 
-다음과 같이 실행하면 됨. 
+다음과 같이 실행하면 됨.<br>
 python gen_report.py 2022/1/4 "computer science" r3.docx 100 300 50
 
 <img src = "https://github.com/mac999/auto_research_report/blob/main/demo.PNG" width="70%"/>
@@ -20,7 +20,7 @@ begin = begin position of content text</br>
 length = copy character length</br>
 step = skip character length</br>
 
-2. config.csv includes document header, title like below. 
+2. config.csv includes document header, title like below. <br>
 
 R&D, Research Fellow, 12, mac, office <br>
 *문헌조사내용(일부),*주요연구내용(일부),*관련연구,*핵심사항,*아이디어,*요점 <br>
