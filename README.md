@@ -26,12 +26,12 @@ R&D, Research Fellow, 12, mac, office <br>
 *문헌조사내용(일부),*주요연구내용(일부),*관련연구,*핵심사항,*아이디어,*요점 <br>
 
 # Install development environment in Windows
-1. Install Anaconda
+1. <a href="https://docs.anaconda.com/anaconda/install/">Install Anaconda</a>
 2. Open Anaconda terminal 
 
 # Install development environment in Ubuntu
-1. install python
-2. install pip
+1. <a href="https://www.python.org/downloads/">install python</a>
+2. <a href="https://pip.pypa.io/en/stable/installation/">install pip</a>
 
 # Install packages
 Open terminal and Input the below pip install commands</br></br>
