@@ -133,39 +133,64 @@ class auto_report:
         # document.add_page_break()
         document.save(fname)
 
-if __name__ == '__main__':
-    url = 'https://sites.google.com/site/bimprinciple/in-the-news/gieob-uidijiteoljeonhwanguhyeon'
-    # url = 'http://daddynkidsmakers.blogspot.com/2022/02/floor-plan.html'
+    def set_parameters(self, argv):
+        url = 'https://sites.google.com/site/bimprinciple/in-the-news/gieob-uidijiteoljeonhwanguhyeon'
+        # url = 'http://daddynkidsmakers.blogspot.com/2022/02/floor-plan.html'        
 
-    c = auto_report()
-    if len(sys.argv) >= 7:
-        c._date = sys.argv[1]
-        c._urls.append(sys.argv[2])
-        if sys.argv[2].find('http') < 0:
-            print("Knowledge searching mode...")
-            c._urls.clear()
-            c.searchGoogle("computer science")
+        if len(argv) >= 7:
+            self._date = argv[1]
+            self._urls.append(argv[2])
+            if argv[2].find('http') < 0:
+                print("Knowledge searching mode...")
+                self._urls.clear()
+                self.searchGoogle(argv[2])
 
-        c._output = sys.argv[3]
-        c._begin = int(sys.argv[4])
-        c._dist = int(sys.argv[5])
-        c._step = int(sys.argv[6])
+            self._output = argv[3]
+            self._begin = int(argv[4])
+            self._dist = int(argv[5])
+            self._step = int(argv[6])
 
-    print("\nReading config file...")
-    index = 0
-    with open("config.csv", 'r', encoding = 'UTF-8') as csvfile:
-        reader = csv.reader(csvfile, delimiter=',')
-        for row in reader:
-            if index == 0:
-                c._header = row
-            if index == 1:
-                c._body_title = row 
+    def read_config(self, fname = "config.csv"):
+        print("\nReading config file...")
+        index = 0
+        with open(fname, 'r', encoding = 'UTF-8') as csvfile:
+            reader = csv.reader(csvfile, delimiter=',')
+            for row in reader:
+                if index == 0:
+                    self._header = row
+                if index == 1:
+                    self._body_title = row 
+                index = index + 1
+
+    def gen_note(self, num = 1):
+        print("\nProcessing...")
+        print(self._header)        
+        print(self._body_title)        
+
+        index = 0
+        for u in self._urls:
+            if index >= num:
+                break
             index = index + 1
+            html = self.download_url(u)
+            body = self.generate_body(html, self._begin, self._dist, self._step)
+            self.createWord(self._output, body)
 
-    print("\nProcessing...")
-    print(c._header)        
-    print(c._body_title)        
+if __name__ == '__main__':
+    c = auto_report()
+    ''' for test
+     argv = []
+    argv.append("")
+    argv.append("2022/1/4")
+    argv.append("https://sites.google.com/site/bimprinciple/in-the-news/gieob-uidijiteoljeonhwanguhyeon")
+    argv.append("r3.docx")
+    argv.append("100")
+    argv.append("300")
+    argv.append("50")
+    c.set_parameters(argv) '''
+    c.set_parameters(sys.argv)
+    c.read_config()
+    c.gen_note()
 
-    html = c.download_url(c._urls[0])
-    body = c.generate_body(html, c._begin, c._dist, c._step)
-    c.createWord(c._output, body)
+
+
